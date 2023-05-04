@@ -19,6 +19,9 @@
 		BF3DCC542A0370AA00002CEC /* SAMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3DCC532A0370AA00002CEC /* SAMainViewController.swift */; };
 		BF3DCC562A0370B500002CEC /* SADetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3DCC552A0370B500002CEC /* SADetailsViewController.swift */; };
 		BF3DCC582A0370E600002CEC /* SANetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3DCC572A0370E600002CEC /* SANetworkManager.swift */; };
+		BF3DCC5B2A03741700002CEC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = BF3DCC5A2A03741700002CEC /* Alamofire */; };
+		BF3DCC5D2A037C1100002CEC /* SAArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3DCC5C2A037C1100002CEC /* SAArticle.swift */; };
+		BF3DCC5F2A03824C00002CEC /* SAConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3DCC5E2A03824C00002CEC /* SAConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,8 @@
 		BF3DCC532A0370AA00002CEC /* SAMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAMainViewController.swift; sourceTree = "<group>"; };
 		BF3DCC552A0370B500002CEC /* SADetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SADetailsViewController.swift; sourceTree = "<group>"; };
 		BF3DCC572A0370E600002CEC /* SANetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SANetworkManager.swift; sourceTree = "<group>"; };
+		BF3DCC5C2A037C1100002CEC /* SAArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAArticle.swift; sourceTree = "<group>"; };
+		BF3DCC5E2A03824C00002CEC /* SAConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF3DCC5B2A03741700002CEC /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +151,7 @@
 		BF3DCC4C2A036F1F00002CEC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BF3DCC5C2A037C1100002CEC /* SAArticle.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -180,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				BF3DCC572A0370E600002CEC /* SANetworkManager.swift */,
+				BF3DCC5E2A03824C00002CEC /* SAConfig.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -200,6 +208,9 @@
 			dependencies = (
 			);
 			name = "Sample App";
+			packageProductDependencies = (
+				BF3DCC5A2A03741700002CEC /* Alamofire */,
+			);
 			productName = "Sample App";
 			productReference = BF3DCC182A036F0200002CEC /* Sample App.app */;
 			productType = "com.apple.product-type.application";
@@ -274,6 +285,9 @@
 				Base,
 			);
 			mainGroup = BF3DCC0F2A036F0100002CEC;
+			packageReferences = (
+				BF3DCC592A03741700002CEC /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = BF3DCC192A036F0200002CEC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -319,6 +333,8 @@
 			files = (
 				BF3DCC1C2A036F0200002CEC /* AppDelegate.swift in Sources */,
 				BF3DCC542A0370AA00002CEC /* SAMainViewController.swift in Sources */,
+				BF3DCC5D2A037C1100002CEC /* SAArticle.swift in Sources */,
+				BF3DCC5F2A03824C00002CEC /* SAConfig.swift in Sources */,
 				BF3DCC582A0370E600002CEC /* SANetworkManager.swift in Sources */,
 				BF3DCC522A03709400002CEC /* SABaseViewController.swift in Sources */,
 				BF3DCC1E2A036F0200002CEC /* SceneDelegate.swift in Sources */,
@@ -660,6 +676,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BF3DCC592A03741700002CEC /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BF3DCC5A2A03741700002CEC /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF3DCC592A03741700002CEC /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BF3DCC102A036F0100002CEC /* Project object */;
 }

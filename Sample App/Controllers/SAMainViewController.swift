@@ -10,10 +10,13 @@ import UIKit
 
 class SAMainViewController: SABaseViewController {
 
+    @IBOutlet weak var tblViewArticles: UITableView!
+    
+    var articles = [SAArticle]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        fetchArticles()
     }
     
 
@@ -27,4 +30,34 @@ class SAMainViewController: SABaseViewController {
     }
     */
 
+    // MARK: - custom functions
+    
+    /// fetch the articles from server and display it
+    func fetchArticles(){
+        SANetworkManager.get(of: SAFeed.self,url: SAConfig.APIUrl, parameters: ["api-key":SAConfig.APIKey]) { result in
+            switch result {
+            case .success(let feed):
+                self.articles   =   feed.articles ?? []
+                self.tblViewArticles.reloadData()
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+}
+extension SAMainViewController:UITableViewDelegate,UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return articles.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SAArticleTableViewCell", for: indexPath)
+        return cell
+    }
+    
+    
+}
+
+class SAArticleTableViewCell:UITableViewCell{
+    
 }
