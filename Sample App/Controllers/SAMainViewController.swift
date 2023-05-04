@@ -51,7 +51,8 @@ extension SAMainViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SAArticleTableViewCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SAArticleTableViewCell", for: indexPath) as? SAArticleTableViewCell else{fatalError("wrong UITableViewCell configuaration")}
+        cell.configure(article: articles[indexPath.row])
         return cell
     }
     
@@ -60,4 +61,19 @@ extension SAMainViewController:UITableViewDelegate,UITableViewDataSource{
 
 class SAArticleTableViewCell:UITableViewCell{
     
+    @IBOutlet weak var lblSection: UILabel!
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var lblAbstract: UILabel!
+    @IBOutlet weak var lblPublishDate: UILabel!
+    
+    // MARK: - custom functions
+    
+    /// to display article info
+    /// - Parameter article: article data to display
+    func configure(article:SAArticle){
+        lblTitle.text       =   article.title
+        lblAbstract.text    =   article.abstract
+        lblSection.text     =   article.section
+        lblPublishDate.text =   article.publishedDate
+    }
 }

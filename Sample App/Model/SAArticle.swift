@@ -24,4 +24,11 @@ struct SAArticle:Decodable{
     
     let title:String?
     let abstract:String?
+    let section:String?
+    let publishedDate:String?
+    
+    enum CodingKeys:String, CodingKey{
+        case title,abstract,section
+        case publishedDate = "published_date"
+    }
 }
