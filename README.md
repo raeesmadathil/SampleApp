@@ -30,4 +30,4 @@ SDWebImage: Used for downloading and caching  images.
 These dependencies are managed using the Swift Package Manager (SPM) and should be automatically downloaded when you open the project in Xcode.
 
 # Acknowledgments
-The article data used in this app is provided by the NTTimes API.
+The article data used in this app is provided by the NYTimes API.
