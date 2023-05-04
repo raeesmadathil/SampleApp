@@ -11,6 +11,7 @@ import UIKit
 class SAMainViewController: SABaseViewController {
 
     @IBOutlet weak var tblViewArticles: UITableView!
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
     var articles = [SAArticle]()
     
@@ -34,7 +35,13 @@ class SAMainViewController: SABaseViewController {
     
     /// fetch the articles from server and display it
     func fetchArticles(){
+        activityIndicatorView.isHidden  =   false
+        activityIndicatorView.startAnimating()
+        
         SANetworkManager.get(of: SAFeed.self,url: SAConfig.APIUrl, parameters: ["api-key":SAConfig.APIKey]) { result in
+            
+            self.activityIndicatorView.stopAnimating()
+            
             switch result {
             case .success(let feed):
                 self.articles   =   feed.articles ?? []

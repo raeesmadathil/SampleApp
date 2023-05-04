@@ -85,11 +85,16 @@
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="hBk-a3-ppD"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="2dD-vT-no9">
+                                <rect key="frame" x="186.66666666666666" y="416" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="06D-8a-KSF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="e9t-ZP-8HF"/>
+                            <constraint firstItem="2dD-vT-no9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fCf-7x-hI5"/>
+                            <constraint firstItem="2dD-vT-no9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hG7-L6-bxe"/>
                             <constraint firstItem="06D-8a-KSF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="j13-Gq-CTh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="06D-8a-KSF" secondAttribute="trailing" id="pbb-9H-gtU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="06D-8a-KSF" secondAttribute="bottom" id="uxQ-lu-ZrR"/>
@@ -97,6 +102,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Most Popular" id="8oN-ST-KO0"/>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="2dD-vT-no9" id="NFa-C0-QPc"/>
                         <outlet property="tblViewArticles" destination="06D-8a-KSF" id="Qfc-rd-0oU"/>
                     </connections>
                 </viewController>
