@@ -47,7 +47,9 @@ class SAMainViewController: SABaseViewController {
                 self.articles   =   feed.articles ?? []
                 self.tblViewArticles.reloadData()
             case .failure(let error):
-                print(error.localizedDescription)
+                let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default))
+                self.present(alert, animated: true)
             }
         }
     }
