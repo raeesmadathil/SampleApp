@@ -21,15 +21,16 @@ class SAMainViewController: SABaseViewController {
     }
     
 
-    /*
+   
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let detailsVc = segue.destination as? SADetailsViewController, let article = (sender as? SAArticleTableViewCell)?.article{
+            detailsVc.article =  article
+        }
     }
-    */
+    
 
     // MARK: - custom functions
     
@@ -75,11 +76,14 @@ class SAArticleTableViewCell:UITableViewCell{
     @IBOutlet weak var lblAbstract: UILabel!
     @IBOutlet weak var lblPublishDate: UILabel!
     
+    var article:SAArticle?
+    
     // MARK: - custom functions
     
     /// to display article info
     /// - Parameter article: article data to display
     func configure(article:SAArticle){
+        self.article        =   article
         lblTitle.text       =   article.title
         lblAbstract.text    =   article.abstract
         lblSection.text     =   article.section

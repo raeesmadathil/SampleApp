@@ -2,7 +2,7 @@
 //  SAArticle.swift
 //  Sample App
 //
-//  Created by Raees DOD on 04/05/2023.
+//  Created by Raees  on 04/05/2023.
 //  Copyright © 2023 Sample. All rights reserved.
 //
 
@@ -51,12 +51,6 @@ extension SAArticle{
         let url:URL?
         let height:CGFloat?
         let width:CGFloat?
-        
-        enum Format:String,Decodable{
-            case standard   =   "standard"
-            case medium210  =   "mediumThreeByTwo210"
-            case medium440  =   "mediumThreeByTwo440"
-        }
     }
     
     enum Types:String,Decodable{
