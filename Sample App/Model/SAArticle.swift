@@ -26,9 +26,43 @@ struct SAArticle:Decodable{
     let abstract:String?
     let section:String?
     let publishedDate:String?
+    let byline:String?
+    let media:[Media]?
     
     enum CodingKeys:String, CodingKey{
-        case title,abstract,section
-        case publishedDate = "published_date"
+        case title,abstract,section,byline,media
+        case publishedDate  =   "published_date"
     }
 }
+extension SAArticle{
+    
+    struct Media:Decodable{
+        let metaData:[MediaMetaData]?
+        let type:Types?
+        
+        
+        enum CodingKeys:String, CodingKey{
+            case type       =   "type"
+            case metaData = "media-metadata"
+        }
+    }
+    
+    struct MediaMetaData:Decodable{
+        let url:URL?
+        let height:CGFloat?
+        let width:CGFloat?
+        
+        enum Format:String,Decodable{
+            case standard   =   "standard"
+            case medium210  =   "mediumThreeByTwo210"
+            case medium440  =   "mediumThreeByTwo440"
+        }
+    }
+    
+    enum Types:String,Decodable{
+        case image
+    }
+    
+}
+
+
