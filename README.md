@@ -11,6 +11,8 @@ To run this project on your local machine, follow these steps:
 Clone this Git repository to your local machine:
 
 1.git clone https://github.com/raeesmadathil/SampleApp.git
+(or click "Download ZIP" or "Open with Xcode"
+![Screenshot 2023-05-04 at 2 01 18 PM](https://user-images.githubusercontent.com/28338151/236173542-ff4e4041-3999-450f-98da-f1b7060dffdc.png)
 
 2.Open the Sample App.xcodeproj file in Xcode.
 (if Xcode is not downloaded already in your machine, please download it from App Store)
