@@ -24,7 +24,7 @@ Clone this Git repository to your local machine:
 # Dependencies
 This project has the following dependencies:
 
-Alamofire: Used for making network requests to the recipe API.
+Alamofire: Used for making network requests to the article API.
 SDWebImage: Used for downloading and caching  images.
 
 These dependencies are managed using the Swift Package Manager (SPM) and should be automatically downloaded when you open the project in Xcode.
