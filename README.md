@@ -14,6 +14,7 @@ Clone this Git repository to your local machine:
 
 2.Open the Sample App.xcodeproj file in Xcode.
 (if Xcode is not downloaded already in your machine, please download it from App Store)
+
 3.Choose a simulator or device from the Scheme menu in the Xcode toolbar.
 
 4.Press the "Play" button or use the keyboard shortcut Cmd + R to build and run the project.
