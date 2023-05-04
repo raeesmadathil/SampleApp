@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Sample App
 //
-//  Created by Raees DOD on 04/05/2023.
+//  Created by Raees  on 04/05/2023.
 //
 
 import UIKit
